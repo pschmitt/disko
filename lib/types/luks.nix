@@ -150,8 +150,6 @@ in
               echo "Passwords did not match, please try again."
             done
           ''}
-          echo "LUKS DETECTION FAILED." >&2
-          exit 9
           cryptsetup -q luksFormat "${config.device}" ${toString config.extraFormatArgs} ${keyFileArgs}
         fi
 
