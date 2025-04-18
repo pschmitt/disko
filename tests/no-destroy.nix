@@ -19,6 +19,6 @@ diskoLib.testLib.makeDiskoTest ({
     machine.succeed("${pkgs.disko}/bin/disko --debug --mode destroy,format,mount /tmp/disko-config.nix --yes-wipe-all-disks");
 
     # Verify the data disk still contains the test file with correct content
-    machine.succeed("grep -Fx disko /mnt/data/test.txt");
+    machine.succeed("${pkgs.gnugrep}/bin/grep -Fx disko /mnt/data/test.txt");
   '';
 })
